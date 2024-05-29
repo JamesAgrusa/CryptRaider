@@ -29,8 +29,12 @@ void UMover::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponent
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
-	AActor* Owner = GetOwner(); // stores address of actor pointer that points to owner
+	AActor* Owner = GetOwner();
+	FString Name = Owner->GetActorNameOrLabel();
+	FVector OwnerLocation = Owner->GetActorLocation();
+	FString OwnerLocationString = OwnerLocation.ToCompactString();
 
-	UE_LOG(LogTemp, Display, TEXT("Mover Owner Adress: %u"), Owner); // will print the address of the owner. 
+
+	UE_LOG(LogTemp, Display, TEXT("Mover Owner Adress: %s with location %s"), *Name, *OwnerLocationString); 
 }
 
