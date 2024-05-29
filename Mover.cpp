@@ -29,6 +29,8 @@ void UMover::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponent
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
-	UE_LOG(LogTemp, Display, TEXT("Mover is Ticking!"));
+	AActor* Owner = GetOwner(); // stores address of actor pointer that points to owner
+
+	UE_LOG(LogTemp, Display, TEXT("Mover Owner Adress: %u"), Owner); // will print the address of the owner. 
 }
 
