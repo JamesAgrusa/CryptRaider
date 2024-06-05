@@ -3,9 +3,22 @@
 
 #include "TriggerComponent.h"
 
+UTriggerComponent::UTriggerComponent()
+{
+    PrimaryComponentTick.bCanEverTick = true;
+
+
+}
+
 void UTriggerComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-    UE_LOG(LogTemp, Display, TEXT("Trigger Compionent alive"));
+}
+
+void UTriggerComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+{
+    Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+
+
 }
